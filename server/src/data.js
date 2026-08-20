@@ -1,0 +1,9 @@
+export const problems=[
+{id:'url-shortener',track:'HLD',title:'Design a URL Shortener',difficulty:'Easy',premium:false,summary:'Build a globally distributed URL shortening service.',requirements:['Create short URLs','Redirect with low latency','Custom aliases','Analytics'],solution:{components:['API Gateway','URL Service','Cache','Key Generator','Analytics Queue'],tradeoffs:['Base62 IDs vs hashes','SQL consistency vs NoSQL scale']}},
+{id:'instagram',track:'HLD',title:'Design a Photo Sharing Platform',difficulty:'Medium',premium:true,summary:'Design a social media system for uploads, feeds and engagement.',requirements:['Upload media','Generate feeds','Likes and comments','Notifications'],solution:{components:['Load Balancer','Media Service','Feed Service','Object Storage','CDN','Kafka'],tradeoffs:['Fan-out on write vs read','Strong vs eventual consistency']}},
+{id:'parking-lot',track:'LLD',title:'Design a Parking Lot',difficulty:'Easy',premium:false,summary:'Model a multi-floor parking system with pricing.',requirements:['Vehicle entry','Spot allocation','Tickets','Payments'],solution:{components:['ParkingLot','Floor','Spot','Vehicle','Ticket','Payment'],tradeoffs:['Strategy pattern for allocation','Factory for vehicles']}},
+{id:'splitwise',track:'LLD',title:'Design an Expense Sharing App',difficulty:'Medium',premium:true,summary:'Model groups, expenses, balances and settlements.',requirements:['Add expenses','Equal/exact/percentage splits','Balances','Settlement suggestions'],solution:{components:['User','Group','Expense','Split','BalanceSheet'],tradeoffs:['Precision handling','Settlement graph optimization']}}
+];
+export const users=new Map();
+export const sessions=new Map();
+export const state={bookmarks:new Map(),progress:new Map(),notes:new Map(),workspaces:new Map()};
