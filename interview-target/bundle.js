@@ -1,0 +1,1 @@
+(()=>{const s={tier:'free',features:{editorial:false}},c=document.querySelector('#pro-card'),u=document.querySelector('#upgrade');function r(){c.classList.toggle('is-locked',!s.features.editorial)}u.addEventListener('click',()=>{s.tier='pro';s.features.editorial=true;r()});window.__algoArena={getUser:()=>({...s}),setTier:t=>{s.tier=t;s.features.editorial=t==='pro';r()}};r()})();
