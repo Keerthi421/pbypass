@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "PremiumGate Lab Demo",
+  "version": "1.0.0",
+  "description": "Localhost-only educational demo of why client-side premium gating is not authorization.",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["http://localhost:5173/*"],
+  "action": {
+    "default_title": "PremiumGate Lab Demo",
+    "default_popup": "popup.html"
+  }
+}
