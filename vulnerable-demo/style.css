@@ -1,0 +1,19 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Inter, system-ui, sans-serif; background: #0b1020; color: #edf2ff; }
+.container { width: min(900px, calc(100% - 32px)); margin: 0 auto; padding: 56px 0; }
+h1 { font-size: clamp(2rem, 5vw, 3.6rem); margin: 8px 0 12px; }
+.subtitle { color: #aab7d4; max-width: 720px; line-height: 1.6; }
+.eyebrow, .label { text-transform: uppercase; letter-spacing: .12em; font-size: .75rem; color: #7dd3fc; }
+.status-card, .content-card, .explanation { background: #121a30; border: 1px solid #263657; border-radius: 18px; padding: 24px; margin-top: 20px; }
+.status-card { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; }
+.status-card div { display: grid; gap: 6px; }
+button { margin-left: auto; border: 0; border-radius: 10px; padding: 12px 18px; background: #7dd3fc; color: #062033; font-weight: 700; cursor: pointer; }
+button:disabled { opacity: .65; cursor: default; }
+.premium { position: relative; min-height: 290px; overflow: hidden; }
+.premium-content { transition: filter .2s ease, opacity .2s ease; }
+.locked .premium-content { filter: blur(8px); opacity: .35; user-select: none; }
+.lock-overlay { display: none; position: absolute; inset: 0; z-index: 2; place-content: center; text-align: center; padding: 24px; background: rgba(11,16,32,.45); }
+.locked .lock-overlay { display: grid; }
+.lock-overlay span { font-size: 2rem; }
+.explanation { color: #b9c5df; line-height: 1.65; }
+@media (max-width: 620px) { button { margin-left: 0; width: 100%; } }
