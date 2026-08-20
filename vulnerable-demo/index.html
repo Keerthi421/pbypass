@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PremiumGate Lab — Vulnerable Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <span class="eyebrow">PremiumGate Lab</span>
+      <h1>Client-side premium gate</h1>
+      <p class="subtitle">This intentionally vulnerable demo sends the premium report to every browser and relies only on client-side state to hide it.</p>
+    </header>
+
+    <section class="status-card">
+      <div>
+        <span class="label">Current account</span>
+        <strong>Demo Free User</strong>
+      </div>
+      <div>
+        <span class="label">Plan</span>
+        <strong id="plan-badge">FREE</strong>
+      </div>
+      <button id="upgrade-button">Upgrade</button>
+    </section>
+
+    <section class="content-card">
+      <h2>Free content</h2>
+      <p>Everyone can read this section.</p>
+    </section>
+
+    <!-- Intentionally vulnerable: this content has already been delivered to the client. -->
+    <section id="premium-section" class="content-card premium locked" aria-hidden="true">
+      <div class="lock-overlay" id="lock-overlay">
+        <span>🔒</span>
+        <h2>Premium report locked</h2>
+        <p>The browser already received this report. The UI is merely hiding it.</p>
+      </div>
+      <div class="premium-content">
+        <span class="eyebrow">Premium report</span>
+        <h2>Q3 Growth Intelligence</h2>
+        <p>Conversion improved by 18%, enterprise retention reached 94%, and the highest-growth segment was developer tooling.</p>
+        <ul>
+          <li>Projected ARR: $12.4M</li>
+          <li>Expansion opportunity: APAC</li>
+          <li>Recommended action: prioritize self-serve onboarding</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="explanation">
+      <h2>Why this is vulnerable</h2>
+      <p>The server or static page delivered the premium data before authorization was enforced. Changing the client-side state can alter visibility, but it should never grant access to data that was not authorized.</p>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
